@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "./static/css/main.05982ca0.css",
+    "main.js": "./static/js/main.a86f8dbc.js",
+    "static/media/Philosopher-Regular.ttf": "./static/media/Philosopher-Regular.93c7d8b5efe3f355f3ca.ttf",
+    "static/media/Philosopher-Bold.ttf": "./static/media/Philosopher-Bold.7e98a8743136a6828ccf.ttf",
+    "static/media/MullerUltraLight.ttf": "./static/media/MullerUltraLight.a6b655efe9c84f7e83be.ttf",
+    "static/media/MullerLight.ttf": "./static/media/MullerLight.351fcd30b12606e1a5de.ttf",
+    "static/media/MullerMedium.ttf": "./static/media/MullerMedium.f279bb8e68f7c0b8b800.ttf",
+    "static/media/Philosopher-Regular.woff": "./static/media/Philosopher-Regular.9e2d575dc1e43ae183ea.woff",
+    "static/media/Philosopher-Bold.woff": "./static/media/Philosopher-Bold.6bd911658950a4fb7bec.woff",
+    "static/media/Philosopher-Regular.woff2": "./static/media/Philosopher-Regular.4a3f67afafeb2c33a685.woff2",
+    "static/media/Philosopher-Bold.woff2": "./static/media/Philosopher-Bold.1441c600377304b487e2.woff2",
+    "static/media/MullerUltraLight.woff": "./static/media/MullerUltraLight.46e636e3cbaf13bed47a.woff",
+    "static/media/MullerLight.woff": "./static/media/MullerLight.d2769648f88e6650a9d9.woff",
+    "static/media/MullerMedium.woff": "./static/media/MullerMedium.e4afbbd09b05b2b18798.woff",
+    "static/media/MullerUltraLight.woff2": "./static/media/MullerUltraLight.18074835c50daa85211e.woff2",
+    "static/media/MullerMedium.woff2": "./static/media/MullerMedium.f6aac750cee75133b7dc.woff2",
+    "static/media/MullerLight.woff2": "./static/media/MullerLight.1ead00b17d9bfd3216a3.woff2",
+    "static/media/close.svg": "./static/media/close.fb7b0f55e1d980c200d4.svg",
+    "static/media/arrow-up.svg": "./static/media/arrow-up.a5cd37afd842ea28dff1.svg",
+    "static/media/arrow-down.svg": "./static/media/arrow-down.38e97020f701ffa01b19.svg",
+    "index.html": "./index.html",
+    "main.05982ca0.css.map": "./static/css/main.05982ca0.css.map",
+    "main.a86f8dbc.js.map": "./static/js/main.a86f8dbc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.05982ca0.css",
+    "static/js/main.a86f8dbc.js"
+  ]
+}
