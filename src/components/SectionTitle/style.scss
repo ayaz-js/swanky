@@ -1,0 +1,19 @@
+.section-title {
+  font-family: 'Philosopher', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 68px;
+  font-weight: 400;
+  line-height: 74px;
+  color: #24170e;
+  margin: 0;
+  text-align: center;
+
+  @media screen and (max-width: 820px) {
+    font-size: 46px;
+    line-height: 50px;
+  }
+
+  @media screen and (max-width: 425px) {
+    font-size: 28px;
+    line-height: 32px;
+  }
+}

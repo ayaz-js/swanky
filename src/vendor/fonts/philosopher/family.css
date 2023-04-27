@@ -1,0 +1,21 @@
+@font-face {
+  font-family: 'Philosopher';
+  src: url('Philosopher-Bold.woff2');
+  src:
+    url('Philosopher-Bold.woff2') format('woff2'),
+    url('Philosopher-Bold.woff') format('woff'),
+    url('Philosopher-Bold.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Philosopher';
+  src: url('Philosopher-Regular.woff2');
+  src:
+    url('Philosopher-Regular.woff2') format('woff2'),
+    url('Philosopher-Regular.woff') format('woff'),
+    url('Philosopher-Regular.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}

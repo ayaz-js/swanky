@@ -1,0 +1,32 @@
+@font-face {
+  font-family: 'Muller';
+  src: url('MullerMedium.woff2');
+  src:
+    url('MullerMedium.woff2') format('woff2'),
+    url('MullerMedium.woff') format('woff'),
+    url('MullerMedium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Muller';
+  src: url('MullerLight.woff2');
+  src:
+    url('MullerLight.woff2') format('woff2'),
+    url('MullerLight.woff') format('woff'),
+    url('MullerLight.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Muller';
+  src: url('MullerUltraLight.woff2');
+  src:
+    url('MullerUltraLight.woff2') format('woff2'),
+    url('MullerUltraLight.woff') format('woff'),
+    url('MullerUltraLight.ttf') format('truetype');
+  font-weight: 250;
+  font-style: normal;
+}

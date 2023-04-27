@@ -1,0 +1,112 @@
+.popup {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+
+  &_opened {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__overlay {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 35, 77, 0.8);
+    backdrop-filter: blur(4px);
+    z-index: 5;
+  }
+
+  &__container {
+    position: absolute;
+    background: #fff;
+    max-width: 706px;
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    z-index: 6;
+    transform: translate(-50%, -50%);
+    padding: 32px 32px 72px;
+    box-sizing: border-box;
+    border-radius: 24px;
+
+    @media screen and (max-width: 425px) {
+      max-width: 328px;
+      padding: 16px 16px 40px;
+      border-radius: 16px;
+    }
+
+    @media screen and (max-width: 320px) {
+      max-width: 280px;
+      padding: 16px 12px 30px;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__close-button {
+    display: block;
+    background-image: url('../../../public/images/close.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
+    border: none;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    @media screen and (max-width: 425px) {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  &__text-container {
+    margin: 16px 0 0;
+    text-align: center;
+  }
+
+  &__title {
+    font-family: 'Philosopher', sans-serif;
+    font-size: 68px;
+    font-weight: 400;
+    line-height: 72px;
+    margin: 0;
+
+    @media screen and (max-width: 425px) {
+      font-size: 28px;
+      line-height: 32px;
+    }
+  }
+
+  &__text {
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 30px;
+    margin: 32px auto 0;
+    color: #8c7f75;
+    max-width: 430px;
+    width: 100%;
+
+    @media screen and (max-width: 425px) {
+      font-size: 16px;
+      line-height: 22px;
+      max-width: 280px;
+      margin: 16px auto 0;
+    }
+  }
+}
+
