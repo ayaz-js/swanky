@@ -1,7 +1,11 @@
 .popup {
+  &__container_type_image {
+    max-width: 800px;
+  }
+
   &__image {
     display: block;
-    object-fit: contain;
+    object-fit: cover;
     width: 100%;
     height: auto;
     margin: 18px 0 0;

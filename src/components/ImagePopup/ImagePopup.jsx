@@ -4,6 +4,11 @@ import './style.scss';
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Navigation, Pagination, Autoplay } from "swiper";
+
+
 const ImagePopup = ({card, isOpen, onClose}) => {
   const closeButton = useRef();
 
@@ -36,7 +41,15 @@ const ImagePopup = ({card, isOpen, onClose}) => {
               onClick={handleClose}
             ></button>
           </div>
-          <Swiper className="mySwiper">
+          <Swiper
+            navigation={true}
+            pagination={true}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            modules={[Navigation, Pagination, Autoplay]}
+            className="mySwiper">
             {splitImages?.map((image) => {
               return (
                 <SwiperSlide>
@@ -49,9 +62,10 @@ const ImagePopup = ({card, isOpen, onClose}) => {
               )
             })}
           </Swiper>
-          <div>
-            <h2>{card?.name}</h2>
-            <p>{card?.description}</p>
+          <div className="popup__product-text-container">
+            <h2 className="popup__product-title">{card?.name}</h2>
+            <p className="popup__product-text">{card?.description}</p>
+            <p className="popup__product-price">Цена: {card?.price} ₸</p>
           </div>
         </div>
       </div>
