@@ -20,6 +20,14 @@
     gap: 48px;
   }
 
+  &__text {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 22px;
+    color: #fff;
+    margin: 4px 0 0;
+  }
+
   &__link {
     font-size: 20px;
     font-weight: 300;
@@ -27,23 +35,21 @@
     color: #fff9f9;
     text-decoration: none;
 
+    &_row {
+      display: flex;
+      gap: 4px;
+    }
+
     @media screen and (max-width: 1280px) {
       font-size: 18px;
       line-height: 22px;
     }
   }
 
-  &__address {
-    font-size: 20px;
-    font-weight: 300;
-    line-height: 26px;
-    color: #fff9f9;
-    margin: 0;
-
-    @media screen and (max-width: 1280px) {
-      font-size: 18px;
-      line-height: 22px;
-    }
+  &__social-icon {
+    display: block;
+    max-width: 24px;
+    width: 100%;
   }
 
   &__logo {

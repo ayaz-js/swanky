@@ -1,8 +1,9 @@
 .products {
   display: flex;
   flex-direction: column;
+  padding: 120px 0 0;
 
   @media screen and (max-width: 1280px) {
-    padding: 0 16px;
+    padding: 56px 16px;
   }
 }

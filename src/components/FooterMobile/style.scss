@@ -28,18 +28,24 @@
 
   &__link {
     font-size: 18px;
-    font-weight: 300;
+    font-weight: 500;
     line-height: 22px;
     color: #fff9f9;
     text-decoration: none;
+    display: flex;
+    justify-content: center;
   }
 
-  &__address {
-    font-size: 18px;
+  &__contact {
+    text-align: center;
+  }
+
+  &__text {
+    font-size: 20px;
     font-weight: 300;
-    line-height: 22px;
-    color: #fff9f9;
-    margin: 0;
+    line-height: 26px;
+    color: #fff;
+    margin: 4px 0 0;
   }
 
   &__button {
