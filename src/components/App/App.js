@@ -6,6 +6,7 @@ import Footer from "../Footer/Footer";
 import FooterMobile from "../FooterMobile/FooterMobile";
 import Popup from "../Popup/Popup";
 import ImagePopup from "../ImagePopup/ImagePopup";
+import Header from "../Header/Header";
 
 const App = () => {
   const baseUrl = `https://docs.google.com/spreadsheets/d/10ssBE9-nkUx7xhZvwBgRUGFvy0hSHuQoHOHlpMcFooU/gviz/tq?tqx=out:json&sheet=products`;
@@ -66,6 +67,8 @@ const App = () => {
 
   return (
     <div className="page-container">
+      <Header />
+
       <main className="main">
         <Products
           cards={cards}
