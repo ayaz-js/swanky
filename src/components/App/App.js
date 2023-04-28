@@ -73,7 +73,10 @@ const App = () => {
             setSelectedCard(card);
             setIsImagePopupOpen(true);
           }}
-          onButtonClick={() => setIsOrderPopupOpen(true)}
+          onButtonClick={(card) => {
+            setSelectedCard(card);
+            setIsOrderPopupOpen(true)
+          }}
         />
         <Features />
       </main>
@@ -85,6 +88,7 @@ const App = () => {
       <Popup
         isOpen={isOrderPopupOpen}
         onClose={closeAllPopups}
+        card={selectedCard}
       />
 
       <ImagePopup

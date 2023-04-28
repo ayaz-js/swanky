@@ -1,9 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import './style.scss';
 
-const Form = ({isOpen, onClose}) => {
-  const baseUrl = 'https://script.google.com/macros/s/AKfycbyRei9QCnuLYHRVjqet_f6BHeyqLFniGpvumqxGAQCn7QTa2EP3SlLPjwNDSDAOqNBR/exec'
-  const [formData, setFormData] = useState({ name: '', phone: '', productName: '' });
+const Form = ({card, isOpen, onClose}) => {
+  const baseUrl = 'https://script.google.com/macros/s/AKfycbyRei9QCnuLYHRVjqet_f6BHeyqLFniGpvumqxGAQCn7QTa2EP3SlLPjwNDSDAOqNBR/exec';
+
+  const [formData, setFormData] = useState(
+    {
+    name: '',
+    phone: '',
+    productName: card?.name,
+    productPrice: card?.price,
+  });
+
   const [inputs, setInputs] = useState({ name: '', phone: '' });
 
   const { name, phone } = inputs;
@@ -29,12 +37,19 @@ const Form = ({isOpen, onClose}) => {
     _formData.append('Name', formData.name);
     _formData.append('Phone', formData.phone);
     _formData.append('ProductName', formData.productName);
+    _formData.append('ProductPrice', formData.productPrice);
 
     fetch(baseUrl, {
       method: 'POST',
       body: _formData,
     }).then((response) => {
-      setFormData({ name: '', phone: '', productName: '' });
+      setFormData(
+        {
+          name: '',
+          phone: '',
+          productName: '',
+          productPrice: '',
+        });
       setInputs({ name: '', phone: '' });
     }).catch((error) => console.log(error));
   }
@@ -58,6 +73,7 @@ const Form = ({isOpen, onClose}) => {
       <button
         type="submit"
         className="form__button"
+        onClick={onClose}
       >Отправить</button>
     </form>
   );

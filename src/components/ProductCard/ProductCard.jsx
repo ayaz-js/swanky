@@ -19,7 +19,7 @@ const ProductCard = ({ cards, onImageClick, onButtonClick }) => {
                 <p className="product-card__price">{card?.price} ₸</p>
                 <button
                   className="product-card__button"
-                  onClick={() => onButtonClick(card?.name)}
+                  onClick={() => onButtonClick(card)}
                 >Заказать</button>
               </div>
             </article>

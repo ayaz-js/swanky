@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import './style.scss';
 import Form from "../Form/Form";
 
-const Popup = ({isOpen, onClose}) => {
+const Popup = ({card, isOpen, onClose}) => {
   const closeButtonRef = useRef();
 
   useEffect(() => {
@@ -38,7 +38,7 @@ const Popup = ({isOpen, onClose}) => {
               с Вами для уточнения всех деталей</p>
           </div>
 
-          <Form isOpen={isOpen} onClose={onClose} />
+          <Form key={card?.id} card={card} isOpen={isOpen} onClose={onClose} />
 
         </div>
       </div>
