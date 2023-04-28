@@ -7,7 +7,7 @@ const FooterMobile = () => {
       <div className="footer-mobile__wrapper">
         <img
           className="footer-mobile__logo"
-          src="/images/logo-footer.svg"
+          src="./images/logo-footer.svg"
           alt="Логотип: Swanky"
         />
 
@@ -29,7 +29,7 @@ const FooterMobile = () => {
 
           <div className="footer-mobile__contact">
             <a href="https://instagram.com/swanky.kz" className="footer-mobile__link footer__link_row">
-              <img src="/images/instagram-icon.svg" alt="instagram: swanky.kz" className="footer__social-icon" />
+              <img src="./images/instagram-icon.svg" alt="instagram: swanky.kz" className="footer__social-icon" />
               swanky.kz
             </a>
             <p className="footer-mobile__text">Онлайн магазин</p>

@@ -7,13 +7,13 @@ const HeaderMobile = () => {
       <div className="header-mobile__wrapper">
 
         <div className="header-mobile__social">
-          <img src="/images/instagram-icon.svg" alt="instagram: swanky.kz" className="header-mobile__icon" />
+          <img src="./images/instagram-icon.svg" alt="instagram: swanky.kz" className="header-mobile__icon" />
           <a href="https://instagram.com/swanky.kz" className="header-mobile__link">swanky.kz</a>
         </div>
 
         <div className="header-mobile__lead">
-          <img src="/images/lead-logo.svg" alt="Логотип: swanky.kz" className="header-mobile__lead-logo" />
-          <img src="/images/lead-subtitle.svg"  alt="посуда со вкусом" className="header-mobile__lead-subtitle" />
+          <img src="./images/lead-logo.svg" alt="Логотип: swanky.kz" className="header-mobile__lead-logo" />
+          <img src="./images/lead-subtitle.svg"  alt="посуда со вкусом" className="header-mobile__lead-subtitle" />
         </div>
 
         <div className="header-mobile__contact-block">
@@ -30,7 +30,7 @@ const HeaderMobile = () => {
 
 
         <button className="header__button header-mobile__button">
-          <img src="/images/arrow-down-header.svg" alt=""/>
+          <img src="./images/arrow-down-header.svg" alt=""/>
         </button>
 
       </div>

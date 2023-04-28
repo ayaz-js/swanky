@@ -23,7 +23,7 @@ const Footer = () => {
 
           <div className="footer__contact">
             <a href="https://instagram.com/swanky.kz" className="footer__link footer__link_row">
-              <img src="/images/instagram-icon.svg" alt="instagram: swanky.kz" className="footer__social-icon" />
+              <img src="./images/instagram-icon.svg" alt="instagram: swanky.kz" className="footer__social-icon" />
               swanky.kz
             </a>
             <p className="footer__text">Онлайн магазин</p>
@@ -34,7 +34,7 @@ const Footer = () => {
         <div className="footer__row">
             <img
               className="footer__logo"
-              src="/images/logo-footer.svg"
+              src="./images/logo-footer.svg"
               alt="Логотип: Swanky"
             />
 

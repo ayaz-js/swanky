@@ -20,7 +20,7 @@ const FeatureItem = () => {
     <>
       <article className="feature-item">
         <img
-          src="/images/features-1.png"
+          src="./images/features-1.png"
           alt=""
           className="feature-item__image"
         />
@@ -38,7 +38,7 @@ const FeatureItem = () => {
       <article className="feature-item">
         {!isMobile && (
           <img
-            src="/images/features-2.png"
+            src="./images/features-2.png"
             alt=""
             className="feature-item__image"
           />
