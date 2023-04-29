@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.21aace59.css",
-    "main.js": "./static/js/main.2c30ffd6.js",
+    "main.js": "./static/js/main.861673d7.js",
     "static/media/Philosopher-Regular.ttf": "./static/media/Philosopher-Regular.93c7d8b5efe3f355f3ca.ttf",
     "static/media/Philosopher-Bold.ttf": "./static/media/Philosopher-Bold.7e98a8743136a6828ccf.ttf",
     "static/media/MullerUltraLight.ttf": "./static/media/MullerUltraLight.a6b655efe9c84f7e83be.ttf",
@@ -22,10 +22,10 @@
     "static/media/arrow-down.svg": "./static/media/arrow-down.38e97020f701ffa01b19.svg",
     "index.html": "./index.html",
     "main.21aace59.css.map": "./static/css/main.21aace59.css.map",
-    "main.2c30ffd6.js.map": "./static/js/main.2c30ffd6.js.map"
+    "main.861673d7.js.map": "./static/js/main.861673d7.js.map"
   },
   "entrypoints": [
     "static/css/main.21aace59.css",
-    "static/js/main.2c30ffd6.js"
+    "static/js/main.861673d7.js"
   ]
 }
