@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.scss';
 
-const Footer = () => {
+const Footer = ({ onArrowClick }) => {
   return (
     <footer className="footer">
       <div className="footer__wrapper">
@@ -38,7 +38,7 @@ const Footer = () => {
               alt="Логотип: Swanky"
             />
 
-          <button className="footer__button">На вверх</button>
+          <button className="footer__button" onClick={onArrowClick}>На вверх</button>
         </div>
       </div>
     </footer>

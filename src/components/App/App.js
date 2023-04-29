@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import './App.scss';
 import Products from "../Products/Products";
 import Features from "../Features/Features";
@@ -66,15 +66,33 @@ const App = () => {
       .finally(() => {});
   }, [baseUrl]);
 
+  const headerSection = useRef(null);
+  const productSection = useRef(null);
+
+  const handleHeaderScroll = () => {
+    headerSection.current.scrollIntoView({block: "start", behavior: "smooth"});
+  }
+
+  const handleProductScroll = () => {
+    productSection.current.scrollIntoView({block: "start", behavior: "smooth"});
+  }
+
   return (
     <div className="page-container">
       {!isMobile ? (
-        <Header />
+        <Header
+          headerSection={headerSection}
+          onArrowClick={handleProductScroll}
+        />
       ):(
-        <HeaderMobile />
+        <HeaderMobile
+          headerSection={headerSection}
+          onArrowClick={handleProductScroll}
+        />
       )}
       <main className="main">
         <Products
+          productSection={productSection}
           cards={cards}
           onImageClick={(card) => {
             setSelectedCard(card);
@@ -88,9 +106,9 @@ const App = () => {
         <Features />
       </main>
       {!isMobile ? (
-        <Footer />
+        <Footer onArrowClick={handleHeaderScroll} />
       ):(
-        <FooterMobile />
+        <FooterMobile onArrowClick={handleHeaderScroll} />
       )}
       <Popup
         isOpen={isOrderPopupOpen}

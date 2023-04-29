@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.scss';
 
-const FooterMobile = () => {
+const FooterMobile = ({ onArrowClick }) => {
   return (
     <footer className="footer-mobile">
       <div className="footer-mobile__wrapper">
@@ -37,7 +37,7 @@ const FooterMobile = () => {
 
         </div>
 
-        <button className="footer-mobile__button">На вверх</button>
+        <button className="footer-mobile__button" onClick={onArrowClick}>На вверх</button>
       </div>
     </footer>
   );

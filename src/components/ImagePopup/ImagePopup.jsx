@@ -9,7 +9,7 @@ import "swiper/css/pagination";
 import { Navigation, Pagination, Autoplay } from "swiper";
 
 
-const ImagePopup = ({card, isOpen, onClose}) => {
+const ImagePopup = ({ card, isOpen, onClose }) => {
   const closeButton = useRef();
 
   useEffect(() => {

@@ -1,9 +1,9 @@
 import React from 'react';
 import './style.scss';
 
-const HeaderMobile = () => {
+const HeaderMobile = ({ onArrowClick, headerSection }) => {
   return (
-    <header className="header-mobile">
+    <header className="header-mobile" ref={headerSection}>
       <div className="header-mobile__wrapper">
 
         <div className="header-mobile__social">
@@ -29,7 +29,7 @@ const HeaderMobile = () => {
         </div>
 
 
-        <button className="header__button header-mobile__button">
+        <button className="header__button header-mobile__button" onClick={onArrowClick}>
           <img src="./images/arrow-down-header.svg" alt=""/>
         </button>
 

@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import './style.scss';
 import Form from "../Form/Form";
 
-const Popup = ({card, isOpen, onClose}) => {
+const Popup = ({ card, isOpen, onClose }) => {
   const closeButtonRef = useRef();
 
   useEffect(() => {

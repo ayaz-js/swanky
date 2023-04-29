@@ -1,9 +1,9 @@
 import React from 'react';
 import './style.scss';
 
-const Header = () => {
+const Header = ({ onArrowClick, headerSection }) => {
   return (
-    <header className="header">
+    <header className="header" ref={headerSection}>
       <div className="header__wrapper">
 
         <div className="header__contact-block">
@@ -28,7 +28,7 @@ const Header = () => {
           <img src="./images/lead-subtitle.svg"  alt="посуда со вкусом" className="header__lead-subtitle" />
         </div>
 
-        <button className="header__button">
+        <button className="header__button" onClick={onArrowClick}>
           <img src="./images/arrow-down-header.svg" alt=""/>
         </button>
 
