@@ -1,8 +1,17 @@
 import React, { useEffect, useState } from 'react';
+import Cleave from 'cleave.js/react';
+import 'cleave.js/dist/addons/cleave-phone.kz'
 import './style.scss';
 
-const Form = ({card, isOpen, onClose}) => {
+const Form = ({ card, isOpen, onClose }) => {
   const baseUrl = 'https://script.google.com/macros/s/AKfycbyRei9QCnuLYHRVjqet_f6BHeyqLFniGpvumqxGAQCn7QTa2EP3SlLPjwNDSDAOqNBR/exec';
+
+  const options = {
+    phone: true,
+    phoneRegionCode: 'KZ',
+    prefix: '+7',
+    delimiter: '-',
+  };
 
   const [formData, setFormData] = useState(
     {
@@ -30,28 +39,35 @@ const Form = ({card, isOpen, onClose}) => {
     setInputs(prev => ({...prev, phone: event.target.value}));
   }
 
+  const isValid = name.length > 0 && phone.length === 15;
+
+  const buttonClassName = isValid ? `form__button form__button_active`
+    : `form__button`
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    const _formData = new FormData();
+    if (isValid) {
+      const _formData = new FormData();
 
-    _formData.append('Name', formData.name);
-    _formData.append('Phone', formData.phone);
-    _formData.append('ProductName', formData.productName);
-    _formData.append('ProductPrice', formData.productPrice);
+      _formData.append('Name', formData.name);
+      _formData.append('Phone', formData.phone);
+      _formData.append('ProductName', formData.productName);
+      _formData.append('ProductPrice', formData.productPrice);
 
-    fetch(baseUrl, {
-      method: 'POST',
-      body: _formData,
-    }).then((response) => {
-      setFormData(
-        {
-          name: '',
-          phone: '',
-          productName: '',
-          productPrice: '',
-        });
-      setInputs({ name: '', phone: '' });
-    }).catch((error) => console.log(error));
+      fetch(baseUrl, {
+        method: 'POST',
+        body: _formData,
+      }).then((response) => {
+        setFormData(
+          {
+            name: '',
+            phone: '',
+            productName: '',
+            productPrice: '',
+          });
+        setInputs({ name: '', phone: '' });
+      }).catch((error) => console.log(error));
+    }
   }
 
   return (
@@ -63,17 +79,18 @@ const Form = ({card, isOpen, onClose}) => {
         value={name}
         onChange={handleChangeName}
       />
-      <input
-        type="text"
+      <Cleave
         placeholder="Ваш номер телефона (WhatsApp)"
         className="form__input"
+        options={options}
         value={phone}
         onChange={handleChangePhone}
       />
       <button
         type="submit"
-        className="form__button"
+        className={buttonClassName}
         onClick={onClose}
+        disabled={!isValid}
       >Отправить</button>
     </form>
   );

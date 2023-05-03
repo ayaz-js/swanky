@@ -14,3 +14,17 @@
   margin-right: 0;
   margin-left: calc(100vw - 100%);
 }
+
+.swiper-button-next, .swiper-button-prev {
+  color: #f9a7ab !important;
+}
+
+@media screen and (max-width: 820px) {
+  .swiper-button-next, .swiper-button-prev {
+    font-size: 20px !important;
+  }
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #f9a7ab !important;
+}

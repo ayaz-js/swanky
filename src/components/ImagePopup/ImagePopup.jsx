@@ -49,7 +49,7 @@ const ImagePopup = ({ card, isOpen, onClose }) => {
               disableOnInteraction: false,
             }}
             modules={[Navigation, Pagination, Autoplay]}
-            className="mySwiper">
+            className="popup__swiper">
             {splitImages?.map((image, index) => {
               return (
                 <SwiperSlide key={index}>
