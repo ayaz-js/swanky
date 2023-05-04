@@ -100,7 +100,7 @@ const App = () => {
           }}
           onButtonClick={(card) => {
             setSelectedCard(card);
-            setIsOrderPopupOpen(true)
+            setIsOrderPopupOpen(true);
           }}
         />
         <Features />
