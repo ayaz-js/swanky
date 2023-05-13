@@ -8,9 +8,11 @@ import Popup from "../Popup/Popup";
 import ImagePopup from "../ImagePopup/ImagePopup";
 import Header from "../Header/Header";
 import HeaderMobile from "../HeaderMobile/HeaderMobile";
+import { ProductContext } from "../../contexts/ProductContext";
+
 
 const App = () => {
-  const baseUrl = `https://docs.google.com/spreadsheets/d/10ssBE9-nkUx7xhZvwBgRUGFvy0hSHuQoHOHlpMcFooU/gviz/tq?tqx=out:json&sheet=products`;
+  const baseUrl = `https://docs.google.com/spreadsheets/d/1EgdkG5Xnt9RISCXwpzfHokv0HPsPIdRv478i85JlgNY/gviz/tq?tqx=out:json&sheet=products`;
 
   const [cards, setCards] = useState([]);
   const [selectedCard, setSelectedCard] = useState(null);
@@ -67,14 +69,24 @@ const App = () => {
   }, [baseUrl]);
 
   const headerSection = useRef(null);
-  const productSection = useRef(null);
+  const productSection  = useRef(null);
 
   const handleHeaderScroll = () => {
     headerSection.current.scrollIntoView({block: "start", behavior: "smooth"});
   }
 
   const handleProductScroll = () => {
-    productSection.current.scrollIntoView({block: "start", behavior: "smooth"});
+    productSection?.current.scrollIntoView({block: "start", behavior: "smooth"});
+  }
+
+  const handleImageClick = (card) => {
+    setSelectedCard(card);
+    setIsImagePopupOpen(true);
+  }
+
+  const handleButtonClick = (card) => {
+    setSelectedCard(card);
+    setIsOrderPopupOpen(true);
   }
 
   return (
@@ -91,18 +103,9 @@ const App = () => {
         />
       )}
       <main className="main">
-        <Products
-          productSection={productSection}
-          cards={cards}
-          onImageClick={(card) => {
-            setSelectedCard(card);
-            setIsImagePopupOpen(true);
-          }}
-          onButtonClick={(card) => {
-            setSelectedCard(card);
-            setIsOrderPopupOpen(true);
-          }}
-        />
+        <ProductContext.Provider value={{cards,  handleImageClick, handleButtonClick, productSection}}>
+          <Products />
+        </ProductContext.Provider>
         <Features />
       </main>
       {!isMobile ? (

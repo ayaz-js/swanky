@@ -4,7 +4,7 @@ import 'cleave.js/dist/addons/cleave-phone.kz'
 import './style.scss';
 
 const Form = ({ card, isOpen, onClose }) => {
-  const baseUrl = 'https://script.google.com/macros/s/AKfycbyRei9QCnuLYHRVjqet_f6BHeyqLFniGpvumqxGAQCn7QTa2EP3SlLPjwNDSDAOqNBR/exec';
+  const baseUrl = 'https://script.google.com/macros/s/AKfycbzjJmwGmaFqMKdXgR3pQquxE_D5bC086qiBuIHrr3g8ROxXzE85Cru_QqN_N_Kt9G4t/exec';
 
   const options = {
     phone: true,
