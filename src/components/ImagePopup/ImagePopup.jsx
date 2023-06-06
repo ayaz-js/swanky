@@ -50,7 +50,7 @@ const ImagePopup = ({ card, isOpen, onClose }) => {
             }}
             modules={[Navigation, Pagination, Autoplay]}
             className="popup__swiper">
-            {splitImages?.map((image, index) => {
+            {isOpen && (splitImages?.map((image, index) => {
               return (
                 <SwiperSlide key={index}>
                   <img
@@ -60,7 +60,7 @@ const ImagePopup = ({ card, isOpen, onClose }) => {
                   />
                 </SwiperSlide>
               )
-            })}
+            }))}
           </Swiper>
           <div className="popup__product-text-container">
             <h2 className="popup__product-title">{card?.name}</h2>

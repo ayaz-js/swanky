@@ -15,6 +15,7 @@ const Form = ({ card, isOpen, onClose }) => {
 
   const [formData, setFormData] = useState(
     {
+    productId: card?.id,
     name: '',
     phone: '',
     productName: card?.name,
@@ -49,6 +50,7 @@ const Form = ({ card, isOpen, onClose }) => {
     if (isValid) {
       const _formData = new FormData();
 
+      _formData.append('id', formData.productId);
       _formData.append('Name', formData.name);
       _formData.append('Phone', formData.phone);
       _formData.append('ProductName', formData.productName);
@@ -57,9 +59,10 @@ const Form = ({ card, isOpen, onClose }) => {
       fetch(baseUrl, {
         method: 'POST',
         body: _formData,
-      }).then((response) => {
+      }).then(() => {
         setFormData(
           {
+            productId: '',
             name: '',
             phone: '',
             productName: '',
