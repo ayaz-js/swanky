@@ -1,15 +1,20 @@
 import React from 'react';
 import './style.scss';
-import useProducts from "../../hooks/useProducts";
+import { useDispatch, useSelector } from "react-redux";
+import { showImageModal, showOrderModal } from "../../store/actions/popupActions";
 
 
 
 const ProductCard = () => {
-  const {cards, handleImageClick, handleButtonClick} = useProducts()
+  const dispatch = useDispatch()
+
+  const cards = useSelector(state => state.products.products)
+  const handleImageClick = (card) => dispatch(showImageModal(card))
+  const handleButtonClick = (card) => dispatch(showOrderModal(card))
 
   return (
     <>
-      {cards.map((card) => {
+      {cards?.map((card) => {
         return (
             <article className="product-card" key={card?.id}>
               <img

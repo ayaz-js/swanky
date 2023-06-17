@@ -3,10 +3,8 @@ import ProductContainer from '../ProductContainer/ProductContainer';
 import SectionTitle from '../SectionTitle/SectionTitle';
 import LoadMoreButton from '../LoadMoreButton/LoadMoreButton';
 import './style.scss';
-import useProducts from "../../hooks/useProducts";
 
-const Products = () => {
-  const { productSection } = useProducts()
+const Products = ({ productSection }) => {
     return (
         <section className="products" ref={productSection}>
             <SectionTitle title="Каталог" />

@@ -8,26 +8,24 @@ import Popup from "../Popup/Popup";
 import ImagePopup from "../ImagePopup/ImagePopup";
 import Header from "../Header/Header";
 import HeaderMobile from "../HeaderMobile/HeaderMobile";
-import { ProductContext } from "../../contexts/ProductContext";
+import { useDispatch, useSelector } from "react-redux";
+import { resetModals } from "../../store/actions/popupActions";
 
 
 const App = () => {
   const baseUrl = `https://docs.google.com/spreadsheets/d/1EgdkG5Xnt9RISCXwpzfHokv0HPsPIdRv478i85JlgNY/gviz/tq?tqx=out:json&sheet=products`;
 
-  const [cards, setCards] = useState([]);
-  const [selectedCard, setSelectedCard] = useState(null);
-  const [isOrderPopupOpen, setIsOrderPopupOpen] = useState(false);
-  const [isImagePopupOpen, setIsImagePopupOpen] = useState(false);
+  const dispatch = useDispatch()
+
+  const { showImageModal, showOrderModal, cardData } = useSelector(state => state.popup)
+
+  const cards = useSelector(state => state.products)
+
+  const closeAllPopups = () => dispatch(resetModals());
+
   const [width, setWidth] = useState(window.innerWidth);
 
-  const closeAllPopups = () => {
-    setIsOrderPopupOpen(false);
-    setIsImagePopupOpen(false);
-  };
-
-  const handleWindowSizeChange = () => {
-    setWidth(window.innerWidth);
-  }
+  const handleWindowSizeChange = () => setWidth(window.innerWidth);
 
   useEffect(() => {
     window.addEventListener('resize', handleWindowSizeChange);
@@ -44,9 +42,7 @@ const App = () => {
       .then((text) => {
         const json = JSON.parse(text.substr(47).slice(0, -2));
 
-        const labels = json.table.cols.map((title) =>
-          title.label !== "" ? title.label : "Техническое поле"
-        );
+        const labels = json.table.cols.map((title) => title.label !== "" ? title.label : "Техническое поле");
 
         const initialArr = json.table.rows;
 
@@ -62,7 +58,7 @@ const App = () => {
 
         const newData = createPureArr(initialArr, labels);
         newData.shift();
-        setCards(newData);
+        dispatch({type: "products", payload: newData });
       })
       .catch((error) => console.log(error))
       .finally(() => {});
@@ -71,23 +67,9 @@ const App = () => {
   const headerSection = useRef(null);
   const productSection  = useRef(null);
 
-  const handleHeaderScroll = () => {
-    headerSection.current.scrollIntoView({block: "start", behavior: "smooth"});
-  }
+  const handleHeaderScroll = () => headerSection.current.scrollIntoView({block: "start", behavior: "smooth"});
 
-  const handleProductScroll = () => {
-    productSection?.current.scrollIntoView({block: "start", behavior: "smooth"});
-  }
-
-  const handleImageClick = (card) => {
-    setSelectedCard(card);
-    setIsImagePopupOpen(true);
-  }
-
-  const handleButtonClick = (card) => {
-    setSelectedCard(card);
-    setIsOrderPopupOpen(true);
-  }
+  const handleProductScroll = () => productSection?.current.scrollIntoView({block: "start", behavior: "smooth"});
 
   return (
     <div className="page-container">
@@ -103,9 +85,7 @@ const App = () => {
         />
       )}
       <main className="main">
-        <ProductContext.Provider value={{cards,  handleImageClick, handleButtonClick, productSection}}>
-          <Products />
-        </ProductContext.Provider>
+        <Products cards={cards} productSection={productSection} />
         <Features />
       </main>
       {!isMobile ? (
@@ -114,15 +94,15 @@ const App = () => {
         <FooterMobile onArrowClick={handleHeaderScroll} />
       )}
       <Popup
-        isOpen={isOrderPopupOpen}
+        isOpen={showOrderModal}
         onClose={closeAllPopups}
-        card={selectedCard}
+        card={cardData}
       />
 
       <ImagePopup
-        isOpen={isImagePopupOpen}
+        isOpen={showImageModal}
         onClose={closeAllPopups}
-        card={selectedCard}
+        card={cardData}
       />
     </div>
   );

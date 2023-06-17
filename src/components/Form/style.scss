@@ -60,6 +60,27 @@
       }
     }
 
+    &_loader:after {
+      content: " ";
+      display: block;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      border-color: #fff transparent #fff transparent;
+      animation: loader 1.2s linear infinite;
+      margin: 0 auto;
+    }
+
+    @keyframes loader {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
     @media screen and (max-width: 425px) {
       font-size: 14px;
       line-height: 18px;

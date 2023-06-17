@@ -1,9 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import './style.scss';
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination, Autoplay } from "swiper";
@@ -41,32 +39,36 @@ const ImagePopup = ({ card, isOpen, onClose }) => {
               onClick={handleClose}
             ></button>
           </div>
-          <Swiper
-            navigation={true}
-            pagination={true}
-            autoplay={{
-              delay: 2500,
-              disableOnInteraction: false,
-            }}
-            modules={[Navigation, Pagination, Autoplay]}
-            className="popup__swiper">
-            {isOpen && (splitImages?.map((image, index) => {
-              return (
-                <SwiperSlide key={index}>
-                  <img
-                    src={image}
-                    alt={card?.name}
-                    className="popup__image"
-                  />
-                </SwiperSlide>
-              )
-            }))}
-          </Swiper>
-          <div className="popup__product-text-container">
-            <h2 className="popup__product-title">{card?.name}</h2>
-            <p className="popup__product-text">{card?.description}</p>
-            <p className="popup__product-price">Цена: {card?.price} ₸</p>
-          </div>
+          {isOpen && (
+            <>
+              <Swiper
+                navigation={true}
+                pagination={true}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
+                modules={[Navigation, Pagination, Autoplay]}
+                className="popup__swiper">
+                {splitImages?.map((image, index) => {
+                  return (
+                    <SwiperSlide key={index}>
+                      <img
+                        src={image}
+                        alt={card?.name}
+                        className="popup__image"
+                      />
+                    </SwiperSlide>
+                  )
+                })}
+              </Swiper>
+              <div className="popup__product-text-container">
+                <h2 className="popup__product-title">{card?.name}</h2>
+                <p className="popup__product-text">{card?.description}</p>
+                <p className="popup__product-price">Цена: {card?.price} ₸</p>
+              </div>
+            </>
+          )}
         </div>
       </div>
     </div>
