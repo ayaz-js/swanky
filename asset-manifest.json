@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.c5d2ae7f.css",
-    "main.js": "./static/js/main.6bdb0903.js",
+    "main.css": "./static/css/main.b453371b.css",
+    "main.js": "./static/js/main.2179d6d3.js",
     "static/media/Philosopher-Regular.ttf": "./static/media/Philosopher-Regular.93c7d8b5efe3f355f3ca.ttf",
     "static/media/Philosopher-Bold.ttf": "./static/media/Philosopher-Bold.7e98a8743136a6828ccf.ttf",
     "static/media/MullerUltraLight.ttf": "./static/media/MullerUltraLight.a6b655efe9c84f7e83be.ttf",
@@ -21,11 +21,11 @@
     "static/media/arrow-up.svg": "./static/media/arrow-up.a5cd37afd842ea28dff1.svg",
     "static/media/arrow-down.svg": "./static/media/arrow-down.38e97020f701ffa01b19.svg",
     "index.html": "./index.html",
-    "main.c5d2ae7f.css.map": "./static/css/main.c5d2ae7f.css.map",
-    "main.6bdb0903.js.map": "./static/js/main.6bdb0903.js.map"
+    "main.b453371b.css.map": "./static/css/main.b453371b.css.map",
+    "main.2179d6d3.js.map": "./static/js/main.2179d6d3.js.map"
   },
   "entrypoints": [
-    "static/css/main.c5d2ae7f.css",
-    "static/js/main.6bdb0903.js"
+    "static/css/main.b453371b.css",
+    "static/js/main.2179d6d3.js"
   ]
 }
