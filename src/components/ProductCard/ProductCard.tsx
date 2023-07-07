@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { FC } from 'react';
 import './style.scss';
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { showImageModal, showOrderModal } from "../../store/actions/popupActions";
+import {useTypedSelector} from "../../hooks/useTypedSelector";
 
 
 
-const ProductCard = () => {
+export const ProductCard: FC = () => {
   const dispatch = useDispatch()
 
-  const cards = useSelector(state => state.products.products)
-  const handleImageClick = (card) => dispatch(showImageModal(card))
-  const handleButtonClick = (card) => dispatch(showOrderModal(card))
+  const cards = useTypedSelector(state => state.products.products)
+
+  const handleImageClick = (card: []) => dispatch(showImageModal(card))
+  const handleButtonClick = (card: []) => dispatch(showOrderModal(card))
 
   return (
     <>
@@ -23,6 +25,7 @@ const ProductCard = () => {
                 className="product-card__image"
                 onClick={() => handleImageClick(card)}
               />
+              <p className="product-card__id">арт: {card.id}</p>
               <h3 className="product-card__name">{card?.name}</h3>
               <div className="product-card__container">
                 <p className="product-card__price">{card?.price} ₸</p>
@@ -37,5 +40,3 @@ const ProductCard = () => {
     </>
   );
 };
-
-export default ProductCard;

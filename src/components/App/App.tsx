@@ -1,18 +1,18 @@
 import React, { useState, useEffect, useRef } from "react";
 import './App.scss';
-import Products from "../Products/Products";
-import Features from "../Features/Features";
-import Footer from "../Footer/Footer";
-import FooterMobile from "../FooterMobile/FooterMobile";
-import Popup from "../Popup/Popup";
-import ImagePopup from "../ImagePopup/ImagePopup";
-import Header from "../Header/Header";
-import HeaderMobile from "../HeaderMobile/HeaderMobile";
+import { Products } from "../Products";
+import { Features } from "../Features";
+import { Footer } from "../Footer";
+import { FooterMobile } from "../FooterMobile";
+import { Popup } from "../Popup";
+import { ImagePopup } from "../ImagePopup";
+import { Header } from "../Header";
+import { HeaderMobile } from "../HeaderMobile";
 import { useDispatch, useSelector } from "react-redux";
 import { resetModals } from "../../store/actions/popupActions";
 
 
-const App = () => {
+export const App = () => {
   const baseUrl = `https://docs.google.com/spreadsheets/d/1EgdkG5Xnt9RISCXwpzfHokv0HPsPIdRv478i85JlgNY/gviz/tq?tqx=out:json&sheet=products`;
 
   const dispatch = useDispatch()
@@ -46,8 +46,10 @@ const App = () => {
 
         const initialArr = json.table.rows;
 
-        const createPureArr = (initialArr, labels) => {
-          return initialArr.map((item) => {
+        // @ts-ignore
+          const createPureArr = (initialArr, labels) => {
+          // @ts-ignore
+              return initialArr.map((item) => {
             return Object.assign(
               ...labels.map((n, i) => ({
                 [n]: item.c[i] ? item.c[i].v : false,
@@ -107,5 +109,3 @@ const App = () => {
     </div>
   );
 }
-
-export default App;

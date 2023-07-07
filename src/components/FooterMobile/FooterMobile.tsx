@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { FC } from 'react';
 import './style.scss';
+import { Props } from "./types";
 
-const FooterMobile = ({ onArrowClick }) => {
+export const FooterMobile: FC<Props> = ({ onArrowClick }) => {
   return (
     <footer className="footer-mobile">
       <div className="footer-mobile__wrapper">
@@ -42,5 +43,3 @@ const FooterMobile = ({ onArrowClick }) => {
     </footer>
   );
 };
-
-export default FooterMobile;

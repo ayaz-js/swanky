@@ -1,12 +1,13 @@
-import React, { useEffect, useRef } from 'react';
+import React, { FC, useEffect, useRef } from 'react';
 import './style.scss';
-import Form from "../Form/Form";
+import { Form } from "../Form";
+import {Props} from "./types";
 
-const Popup = ({ card, isOpen, onClose }) => {
+export const Popup: FC<Props> = ({ card, isOpen, onClose }) => {
   const closeButtonRef = useRef();
 
   useEffect(() => {
-    const handleEscClose = (event) => event.code === "Escape" && onClose();
+    const handleEscClose = (event: KeyboardEvent) => event.code === "Escape" && onClose();
 
     isOpen && document.addEventListener("keyup", handleEscClose);
 
@@ -15,7 +16,7 @@ const Popup = ({ card, isOpen, onClose }) => {
     };
   }, [isOpen, onClose]);
 
-  const handleClose = (event) => {
+  const handleClose = (event: React.MouseEvent<HTMLElement>) => {
     if (event.target === event.currentTarget || event.target === closeButtonRef.current) {
       onClose();
     }
@@ -45,5 +46,3 @@ const Popup = ({ card, isOpen, onClose }) => {
     </div>
   );
 };
-
-export default Popup;

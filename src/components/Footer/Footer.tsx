@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { FC } from 'react';
 import './style.scss';
+import { Props } from "./types";
 
-const Footer = ({ onArrowClick }) => {
+export const Footer: FC<Props> = ({ onArrowClick }) => {
   return (
     <footer className="footer">
       <div className="footer__wrapper">
@@ -44,5 +45,3 @@ const Footer = ({ onArrowClick }) => {
     </footer>
   );
 };
-
-export default Footer;

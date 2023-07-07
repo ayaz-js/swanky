@@ -1,16 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
+// @ts-ignore
 import Cleave from 'cleave.js/react';
 import 'cleave.js/dist/addons/cleave-phone.kz'
 import './style.scss';
-import {useDispatch, useSelector} from "react-redux";
+import { useDispatch } from "react-redux";
 import { handleLoading, resetLoading } from "../../store/actions/loaderAction";
+import { Props } from "./types";
+import { useTypedSelector } from "../../hooks/useTypedSelector";
 
-const Form = ({ card, isOpen, onClose }) => {
+export const Form: FC<Props> = ({ card, isOpen, onClose }) => {
   const baseUrl = 'https://script.google.com/macros/s/AKfycbzjJmwGmaFqMKdXgR3pQquxE_D5bC086qiBuIHrr3g8ROxXzE85Cru_QqN_N_Kt9G4t/exec';
 
   const dispatch = useDispatch()
 
-  const { isLoading } = useSelector(state => state.loader)
+  const { isLoading } = useTypedSelector(state => state.loader)
 
   const options = {
     phone: true,
@@ -34,12 +37,12 @@ const Form = ({ card, isOpen, onClose }) => {
 
   useEffect(() => setInputs({ name: '', phone: '' }), [isOpen])
 
-  const handleChangeName = (event) => {
+  const handleChangeName = (event: React.ChangeEvent<HTMLInputElement>) => {
     setFormData(prev => ({...prev, name: event.target.value}));
     setInputs(prev => ({...prev, name: event.target.value}));
   }
 
-  const handleChangePhone = (event) => {
+  const handleChangePhone = (event: React.ChangeEvent<HTMLInputElement>) => {
     setFormData(prev => ({...prev, phone: event.target.value}));
     setInputs(prev => ({...prev, phone: event.target.value}));
   }
@@ -62,7 +65,7 @@ const Form = ({ card, isOpen, onClose }) => {
       });
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     dispatch(handleLoading())
@@ -112,5 +115,3 @@ const Form = ({ card, isOpen, onClose }) => {
     </form>
   );
 };
-
-export default Form;

@@ -1,17 +1,18 @@
-import React, { useEffect, useRef } from 'react';
+import React, { FC, useEffect, useRef } from 'react';
 import './style.scss';
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination, Autoplay } from "swiper";
+import { Props } from "./types";
 
 
-const ImagePopup = ({ card, isOpen, onClose }) => {
+export const ImagePopup: FC<Props> = ({ card, isOpen, onClose }) => {
   const closeButton = useRef();
 
   useEffect(() => {
-    const handleEscClose = (event) => event.code === "Escape" && onClose();
+    const handleEscClose = (event: KeyboardEvent) => event.code === "Escape" && onClose();
 
     isOpen && document.addEventListener("keyup", handleEscClose);
 
@@ -20,7 +21,7 @@ const ImagePopup = ({ card, isOpen, onClose }) => {
     };
   }, [isOpen, onClose]);
 
-  const handleClose = (event) => {
+  const handleClose = (event: React.MouseEvent<HTMLElement>) => {
     if (event.target === event.currentTarget || event.target === closeButton.current) {
       onClose();
     }
@@ -50,9 +51,9 @@ const ImagePopup = ({ card, isOpen, onClose }) => {
                 }}
                 modules={[Navigation, Pagination, Autoplay]}
                 className="popup__swiper">
-                {splitImages?.map((image, index) => {
+                {splitImages?.map((image) => {
                   return (
-                    <SwiperSlide key={index}>
+                    <SwiperSlide key={image}>
                       <img
                         src={image}
                         alt={card?.name}
@@ -74,5 +75,3 @@ const ImagePopup = ({ card, isOpen, onClose }) => {
     </div>
   );
 };
-
-export default ImagePopup;

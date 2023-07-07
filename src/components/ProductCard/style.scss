@@ -10,12 +10,19 @@
      border-radius: 12px;
     cursor: pointer;
 
-    @media screen and (max-width: 425px) {
-      max-width: 100%;
-      height: 156px;
+    @media screen and (max-width: 576px) {
+      max-width: unset;
+      height: auto;
       border-radius: 6px;
     }
    }
+
+  &__id {
+    font-size: 14px;
+    line-height: 16px;
+    opacity: 0.5;
+    margin: 6px 0 0;
+  }
 
   &__name {
     font-size: 24px;
@@ -28,7 +35,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
 
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 576px) {
       font-size: 14px;
       line-height: 18px;
       color: #24170e;
@@ -42,7 +49,7 @@
     justify-content: space-between;
     margin: 12px 0 0;
 
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 576px) {
       flex-direction: column;
       align-items: flex-start;
       margin: 8px 0 0;
@@ -58,7 +65,7 @@
     color: #24170e;
     margin: 0;
 
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 576px) {
       font-size: 18px;
       line-height: 22px;
     }
@@ -81,7 +88,7 @@
       background-color: #f9a7ab;
     }
 
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 576px) {
       font-size: 14px;
       line-height: 18px;
       padding: 8px 24px;

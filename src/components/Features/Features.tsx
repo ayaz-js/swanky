@@ -1,9 +1,9 @@
 import React from 'react';
 import './style.scss';
-import SectionTitle from "../SectionTitle/SectionTitle";
-import FeatureItem from "../FeatureItem/FeatureItem";
+import { SectionTitle } from "../SectionTitle";
+import { FeatureItem } from "../FeatureItem";
 
-const Features = () => {
+export const Features = () => {
   return (
     <section className="features">
       <SectionTitle title="Преимущества нашего бренда" />
@@ -14,5 +14,3 @@ const Features = () => {
     </section>
   );
 };
-
-export default Features;

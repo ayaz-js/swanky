@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './style.scss';
 
-const FeatureItem = () => {
+export const FeatureItem = () => {
   const [width, setWidth] = useState(window.innerWidth);
 
   const handleWindowSizeChange = () => {
@@ -54,5 +54,3 @@ const FeatureItem = () => {
     </>
   );
 };
-
-export default FeatureItem;

@@ -1,15 +1,21 @@
-import React from 'react';
+import React, { FC } from 'react';
 import './style.scss';
+import { Props } from "./types";
 
-const Header = ({ onArrowClick, headerSection }) => {
+export const Header: FC<Props> = ({ onArrowClick, headerSection }) => {
   return (
     <header className="header" ref={headerSection}>
       <div className="header__wrapper">
 
         <div className="header__contact-block">
+          {/*<div className="header__contact">*/}
+          {/*  <a href="tel:+77764447723" className="header__link">+7 (776) 444 77 23</a>*/}
+          {/*  <p className="header__text">для заказа</p>*/}
+          {/*</div>*/}
+
           <div className="header__contact">
-            <a href="tel:+77764447723" className="header__link">+7 (776) 444 77 23</a>
-            <p className="header__text">для заказа</p>
+            <a href="tel:+77764447723" className="header__link">+77764447723 (WhatsApp)</a>
+            <p className="header__text">оптовые продажи для ресторанов и баров</p>
           </div>
 
           <div className="header__social">
@@ -17,10 +23,10 @@ const Header = ({ onArrowClick, headerSection }) => {
             <a href="https://instagram.com/swanky.kz" className="header__link">swanky.kz</a>
           </div>
 
-          <div className="header__contact">
-            <a href="tel:+77762561447" className="header__link">+7 (776) 256 14 47</a>
-            <p className="header__text">для ресторанов и кафе</p>
-          </div>
+          {/*<div className="header__contact">*/}
+          {/*  <a href="tel:+77762561447" className="header__link">+7 (776) 256 14 47</a>*/}
+          {/*  <p className="header__text">для ресторанов и кафе</p>*/}
+          {/*</div>*/}
         </div>
 
         <div className="header__lead">
@@ -36,5 +42,3 @@ const Header = ({ onArrowClick, headerSection }) => {
     </header>
   );
 };
-
-export default Header;
